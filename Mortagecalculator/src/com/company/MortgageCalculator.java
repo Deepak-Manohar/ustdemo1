@@ -16,12 +16,12 @@ public class MortgageCalculator {
         this.years = years;
     }
 
-    public double calculateBalance( short numberOfPaymentsMade ) {
+    public double calculateBalance( short n ) {
         float monthlyInterest = getMonthlyInterest();
         float numberOfPayments = getNumberOfPayments();
 
         double balance = principal
-                * (Math.pow(1 + monthlyInterest, numberOfPayments) - Math.pow(1 + monthlyInterest, numberOfPaymentsMade))
+                * (Math.pow(1 + monthlyInterest, numberOfPayments) - Math.pow(1 + monthlyInterest, n))
                 / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
 
         return balance;
